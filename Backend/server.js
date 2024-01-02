@@ -7,9 +7,19 @@ app.use(express.json());
 app.use(cors());
 mongoose.connect('mongodb://127.0.0.1:27017/loginDetails');
 app.post('/register', async (req, res) => {
-    UserModel.create(req.body)
-    .then(user=>res.json(user))
-    .catch(err=>res.status(400).json('Error: '+err));
+  const {email, password} = req.body;
+  UserModel.findOne({email: req.body.email})
+    .then(user=>{
+        if(user){
+                res.json("User already exists");
+        }
+          else{
+            UserModel.create({email: email, password: password})
+            .then(user=>{
+                res.json("Success");
+            })
+          }
+    })
 });
 
 app.post('/login', async (req, res) => {
