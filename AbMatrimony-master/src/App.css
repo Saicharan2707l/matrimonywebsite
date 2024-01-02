@@ -1,0 +1,155 @@
+
+
+.auth-form-container, .login-form, .register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 600px) {
+  .auth-form-container {
+    padding: 5rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 0.5rem;
+  }
+}
+
+label {
+  text-align: left;
+  padding: 0.25rem 0;
+}
+
+input {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+}
+
+button {
+  border: none;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #7439db;
+}
+
+.link-btn {
+  background: none;
+  color: rgb(24, 14, 143);
+  text-decoration: underline;
+  margin-top: 6px;
+}
+
+/* App.css */
+/* App.css */
+/* App.css */
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('wp8201930.jpg') no-repeat center center fixed;
+  background-size: cover;
+  backdrop-filter: blur(8px);
+}
+
+.left-side {
+  text-align: center;
+  margin-right: 20px; /* Add margin for spacing */
+  
+}
+
+.right-side {
+  width: 500px; /* Set the width of the login/register form */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-box {
+  border: 1px solid #ddd; /* Light gray border */
+  background-color: #fff; /* White background */
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.input-container {
+  margin-bottom: 15px;
+  color: antiquewhite;
+}
+
+.input-container label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333; /* Dark gray label color */
+}
+
+.input-container input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.button-container {
+  margin-top: 15px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007bff; /* Blue button color */
+  color: #ffffff; /* White text color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2a047d; /* Darker blue on hover */
+  color: #fff;
+}
+
+/* Add additional styling as needed */
+/* App.css */
+
+/* Add the following styles to horizontally align the navbar items */
+.navbar {
+  background: transparent;
+  overflow: hidden;
+  justify-content: flex-start;
+  align-items: top;
+  flex-direction: row;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  justify-content: left;
+  display: flex;
+}
+
+.navbar li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.navbar a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  color: black;
+  transform: scale(1.1); /* Increase the size by 10% on hover */
+}
