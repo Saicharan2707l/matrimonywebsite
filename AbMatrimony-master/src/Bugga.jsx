@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './App.css';
-import { Login } from "./Login";
-import { Register } from "./Register";
+import Login from './Login';
+import Register from './Register';
 
 function Bugga() {
   const [currentForm, setCurrentForm] = useState('login');
@@ -12,12 +12,14 @@ function Bugga() {
 
   return (
     <div className="App">
-      <div className="navbar">
-      <ul>
-          <li><a href="#home" style={{fontFamily:'ubuntu', fontSize:'2em'}}>Home</a></li>
-          <li><a href="#about" style={{fontFamily:'ubuntu', fontSize:'2em'}}>About</a></li>
-          <li><a href="#contact" style={{fontFamily:'ubuntu', fontSize:'2em'}}>Contact Us</a></li>
-        </ul>
+      <div className="top-container">
+        <div className="navbar">
+        <ul>
+            <li><a href="#home" style={{fontFamily:'ubuntu', fontSize:'2em'}}>Home</a></li>
+            <li><a href="#about" style={{fontFamily:'ubuntu', fontSize:'2em'}}>About</a></li>
+            <li><a href="#contact" style={{fontFamily:'ubuntu', fontSize:'2em'}}>Contact Us</a></li>
+          </ul>
+        </div>
       </div>
       <div className="left-side">
         <h1 style={{
