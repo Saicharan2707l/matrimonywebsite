@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+
 const Login = () => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -9,6 +10,10 @@ const Login = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        if (!email || !password) {
+            alert('Please enter all the Required fields');
+            return;
+        }
         
         axios.post( 'http://localhost:3001/login', {email, password})
         .then(result => {
