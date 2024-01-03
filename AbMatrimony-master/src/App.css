@@ -49,7 +49,7 @@ button {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url('wp8201930.jpg') no-repeat center center fixed;
+  background: url('/src/assets/images/wp8201930.jpg') no-repeat center center fixed;
   background-size: cover;
   backdrop-filter: blur(8px);
 }

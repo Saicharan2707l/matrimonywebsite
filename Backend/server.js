@@ -1,48 +1,45 @@
 const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
-const FormDataModel = require ('./models/FormData');
+const UserModel = require ('./models/User');
 const app = express();
 app.use(express.json());
 app.use(cors());
-mongoose.connect('mongodb://127.0.0.1:27017/logindetails');
-app.post('/register', (req, res)=>{
-    // To post / insert data into database
-    const {email, password} = req.body;
-    FormDataModel.findOne({email: email})
-    .then(user => {
+mongoose.connect('mongodb://127.0.0.1:27017/loginDetails');
+app.post('/register', async (req, res) => {
+  const {email, password} = req.body;
+  UserModel.findOne({email: req.body.email})
+    .then(user=>{
         if(user){
-            res.json("Already registered")
+                res.json("User already exists");
         }
-        else{
-            FormDataModel.create(req.body)
-            .then(log_reg_form => res.json(log_reg_form))
-            .catch(err => res.json(err))
-        }
-    })
-    
-})
-
-app.post('/login', (req, res)=>{
-    // To find record from the database
-    const {email, password} = req.body;
-    FormDataModel.findOne({email: email})
-    .then(user => {
-        if(user){
-            // If user found then these 2 cases
-            if(user.password === password) {
+          else{
+            UserModel.create({email: email, password: password})
+            .then(user=>{
                 res.json("Success");
-            }
-            else{
-                res.json("Wrong password");
-            }
-        }
-        // If user not found then 
-        else{
-            res.json("No records found! ");
-        }
+            })
+          }
     })
-})
+});
+
+app.post('/login', async (req, res) => {
+    const {email, password} = req.body;
+    UserModel.findOne({email: email})
+    .then(user=>{
+       if(user){
+              if(password===user.password){
+                res.json("Success");
+              }else{
+                res.json("Wrong password");
+              }
+       }
+         else{
+              res.json("User does not exist");
+            }
+    })
+}   
+);
+
 
 app.listen(3001, () => {
     console.log("Server listining on http://127.0.0.1:3001");
