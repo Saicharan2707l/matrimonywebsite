@@ -1,0 +1,76 @@
+/* Styling for the form section */
+.section {
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling for each label and input container */
+  .section div {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    margin-bottom: 12px;
+  }
+  
+  /* Styling for labels */
+  .section label {
+    flex: 1;
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  /* Styling for input fields */
+  .section input[type="text"] {
+    flex: 2;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .section input[type="text"]:focus {
+    outline: none;
+    border-color: #4a90e2;
+  }
+  
+  /* Styling for buttons */
+  .section button {
+    margin-top: 12px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #4a90e2;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .section button:hover {
+    background-color: #357bd8;
+  }
+  .section .btn-container {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+  }
+  
+
+  span{
+    color: red;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: -70px;
+  }
+  

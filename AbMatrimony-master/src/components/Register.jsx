@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 const Register = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [name, setName] = useState("");
   const [mes, setMes] = useState("");
+  const navigate = useNavigate();
+
 
   const checkPassword = (password) => {
     var strength = 0;
@@ -56,6 +60,7 @@ const Register = () => {
         console.log(err);
         alert("Error creating user");
       });
+      navigate('/userDetails')
   };
   return (
     <div className="auth-form-container">
